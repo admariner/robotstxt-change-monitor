@@ -49,11 +49,10 @@ def get_admin_email_body(main_content):
     if len(logs.admin_email_errors) == 0:
         return "Hi there,\n\n{}\n\nThere were no unexpected errors.".format(main_content)
 
-    else:
-        email_errs = [replace_angle_brackets(e) for e in logs.admin_email_errors.copy()]
+    email_errs = [replace_angle_brackets(e) for e in logs.admin_email_errors.copy()]
 
-        return "Hi there,\n\n{}\n\nErrors which may require investigation are listed below:\n\n" \
-               "{}".format(main_content, "\n\n".join(email_errs))
+    return "Hi there,\n\n{}\n\nErrors which may require investigation are listed below:\n\n" \
+           "{}".format(main_content, "\n\n".join(email_errs))
 
 
 @logs.unexpected_exception_handling
