@@ -27,8 +27,7 @@ def sites_from_file(file):
     data = []
     with open(file, 'r') as sites_file:
         csv_reader = csv.reader(sites_file, delimiter=',')
-        row_num = 0
-        for row in csv_reader:
+        for row_num, row in enumerate(csv_reader):
             # Skip the header row labels
             if row_num > 0:
                 try:
@@ -37,8 +36,6 @@ def sites_from_file(file):
                     err_msg = logs.get_err_str(e, "Couldn't extract row {} from CSV."
                                                "".format(row_num))
                     logs.log_error(err_msg)
-
-            row_num += 1
 
     return data
 

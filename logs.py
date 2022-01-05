@@ -38,14 +38,15 @@ def get_err_str(exception, message, trace=True):
         trace (bool): whether the traceback is included (default=True).
 
     """
-    if trace:
-        trace_str = "".join(traceback.format_tb(exception.__traceback__)).strip()
-        err_str = "{}\nTYPE: {}\nDETAILS: {}\nTRACEBACK:\n\n{}\n" \
-                  "".format(message, type(exception), exception, trace_str)
-    else:
-        err_str = "{}\nTYPE: {}\nDETAILS: {}\n".format(message, type(exception), exception)
+    if not trace:
+        return "{}\nTYPE: {}\nDETAILS: {}\n".format(
+            message, type(exception), exception
+        )
 
-    return err_str
+
+    trace_str = "".join(traceback.format_tb(exception.__traceback__)).strip()
+    return "{}\nTYPE: {}\nDETAILS: {}\nTRACEBACK:\n\n{}\n" \
+                  "".format(message, type(exception), exception, trace_str)
 
 
 def log_error(error_message, print_err=True, log_in_main=True, in_admin_email=True):
