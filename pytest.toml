@@ -1,0 +1,8 @@
+# https://docs.pytest.org/en/stable/reference/customize.html
+# https://docs.pytest.org/en/stable/reference/reference.html#configuration-options
+# https://docs.pytest.org/en/stable/explanation/goodpractices.html
+
+[pytest]
+pythonpath = [".", "app"]
+strict = true
+testpaths = ["tests"]
