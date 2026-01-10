@@ -8,9 +8,9 @@ Whether you're a webmaster, developer, or SEO, this tool can help you quickly di
 
 - [Key features](#key-features)
 - [How it works](#how-it-works)
-- [Setup](#setup)
-  - [General setup (all setup options)](#general-setup-all-setup-options)
-  - [Setup options](#setup-options)
+- [Setup and usage](#setup-and-usage)
+  - [General setup (all setup/usage options)](#general-setup-all-setupusage-options)
+  - [Setup/usage options](#setupusage-options)
     - [Local with emails disabled](#local-with-emails-disabled)
     - [Local with emails enabled](#local-with-emails-enabled)
     - [Server with emails enabled](#server-with-emails-enabled)
@@ -38,9 +38,9 @@ Whether you're a webmaster, developer, or SEO, this tool can help you quickly di
 6. If enabled, an administrative email alert is sent out detailing overall check results and any unexpected errors.
 
 
-## Setup
+## Setup and usage
 
-### General setup (all setup options)
+### General setup (all setup/usage options)
 1. [Clone a local copy of this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your computer and/or a server, depending on your chosen setup (detailed below).
 2. Create a new `config.py` file in the /app/ subdirectory. Copy the contents of `example_config.py` into `config.py`. Edit the `PATH` variable to reference the location of the project root directory.
 3. Install all requirements (specific versions of Python and packages) using the [uv package manager](https://docs.astral.sh/uv/guides/projects/) or another tool of your choice (based on the [pyproject file](/pyproject.toml)).
@@ -54,7 +54,8 @@ URL | Name | Email
 https://github.com/ | Github | person@example.com
 https://www.example.com/ | Example | another.person@example.com
 
-### Setup options
+### Setup/usage options
+Note: remember to use your (activated) virtual environment or use [uv run](https://docs.astral.sh/uv/concepts/projects/run/) when running `main.py` and any other scripts/tests.
 
 #### Local with emails disabled
 *The quickest setup, suitable if you plan to run the tool on your computer for sites that you're personally monitoring (or are otherwise willing to notify other people about changes/errors manually).*
